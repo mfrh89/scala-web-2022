@@ -29,6 +29,6 @@ jobs:
                   PORT: ${{ secrets.SERVER_PORT }}
                   USERNAME: ${{ secrets.SERVER_USERNAME }}
                   PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-                  TARGET: ${{ secrets.TARGET }}
                   SOURCE: "dist/*"
+                  TARGET: "scala-prien.de/public_html"
                   STRIP_COMPONENTS: 1
