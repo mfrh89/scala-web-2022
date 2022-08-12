@@ -12,6 +12,16 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
+            - name: Node 12.16.3
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.16.3
+
+            - name: NPM Install and NPM Build
+              run: |
+                  npm i
+                  npm run build
+
             - name: Copy files to Production Server
               uses: appleboy/scp-action@master
               with:
