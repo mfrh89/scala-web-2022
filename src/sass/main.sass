@@ -1,0 +1,365 @@
+@import '_reset.sass'
+@import '_var.sass'
+@import '_typography.sass'
+
+html
+    scroll-behavior: smooth
+    overflow-x: hidden
+    scroll-padding-top: 100px
+
+body
+    font-family: $base-font
+    color: $font-color
+    margin: $mar-0
+    padding: $pad-0
+
+
+.marquee
+    display: flex
+    overflow: hidden
+    width: 100vw
+    max-width: 100%
+    height: 50px
+    display: flex
+    align-items: center
+
+.marquee-top
+    top: 0
+    position: fixed
+    z-index: 1000
+
+
+.marquee-bottom
+    bottom: 0
+    position: sticky
+    z-index: 1000
+
+.marquee--light
+    display: flex
+    align-items: center
+    background-color: white
+    border-top: 2px solid $primary-color
+    border-bottom: 2px solid $primary-color
+
+.marquee--dark
+    background-color: $primary-color
+    border-top: 2px solid white
+    border-bottom: 2px solid white
+
+.marquee--text-light
+    white-space: nowrap
+    color: black
+    +txt-pre-22
+    +bold
+    +wider
+    +uppercase
+
+.marquee--text-dark
+    white-space: nowrap
+    color: white
+    +txt-pre-22
+    +bold
+    +wider
+    +uppercase
+
+.content__wrapper
+    z-index: 0
+    width: 100vw
+    display: grid
+    grid-template-columns: repeat(12, [col-start] 1fr)
+    gap: 20px
+
+
+
+
+.logo__wrapper
+    position: relative
+    grid-column: col-start 4 / span 6
+    margin-top: 100px
+    margin-bottom: 16px
+    padding-left: $pad-32
+    padding-right: $pad-32
+
+    @media screen and ( max-width: 1024px )
+       grid-column: col-start 3 / span 8
+
+    @media screen and ( max-width: 480px )
+       grid-column: col-start 1 / span 12
+        
+
+    img
+        width: 100%
+
+
+
+
+.nav__wrapper
+    position: relative
+    grid-column: col-start 4 / span 6
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    padding-left: $pad-32
+    padding-right: $pad-32
+
+    @media screen and ( max-width: 1024px )
+       grid-column: col-start 3 / span 8
+
+    @media screen and ( max-width: 480px )
+       grid-column: col-start 1 / span 12
+
+
+.img__wrapper
+    position: relative
+    grid-column: col-start 4 / span 6
+    padding: $pad-32
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding-left: $pad-32
+    padding-right: $pad-32
+
+    @media screen and ( max-width: 1024px )
+       grid-column: col-start 3 / span 8
+
+    @media screen and ( max-width: 480px )
+       grid-column: col-start 1 / span 12
+       flex-direction: column
+       gap: 32px
+
+    img
+        width: 47%
+        box-shadow: $img-shadow
+
+        @media screen and ( max-width: 480px )
+            width: 100%
+
+.img__wrapper :nth-child(1)
+        margin-top: 10%
+
+        @media screen and ( max-width: 480px )
+            margin-top: 0
+
+.img__wrapper :nth-child(2)
+        margin-bottom: 10% 
+
+        @media screen and ( max-width: 480px )
+            margin-bottom: 0
+
+.text__wrapper
+    position: relative
+    width: 100%
+    grid-column: col-start 4 / span 6
+    padding-top: $pad-16
+    padding-bottom: $pad-16
+    padding-left: $pad-32
+    padding-right: $pad-32
+
+    @media screen and ( max-width: 1024px )
+       grid-column: col-start 3 / span 8
+
+    @media screen and ( max-width: 480px )
+       grid-column: col-start 1 / span 12
+
+    
+
+.text__wrapper-2col
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    div
+        width: 49%
+
+
+.image-slider__wrapper
+    position: relative
+    width: 100%
+    height: 700px
+    grid-column: col-start 1 / span 12
+    display: flex
+    flex-direction: row
+    gap: 48px
+    overflow: scroll
+    margin-top: $mar-32
+    margin-bottom: $mar-32
+    padding-left: $pad-32
+    padding-right: $pad-32
+
+    @media screen and ( max-width: 480px )
+        width: 100%
+        height: 420px
+        gap: 32px
+
+
+.image-slider__wrapper :nth-child(1) img
+    width: 500px
+    height: 333px
+    
+
+    @media screen and ( max-width: 480px )
+        width: 300px
+        height: 200px
+
+.image-slider__wrapper :nth-child(2) img
+    width: 333px
+    height: 500px
+    margin-top: 25%
+
+    @media screen and ( max-width: 480px )
+        width: 200px
+        height: 300px
+
+.image-slider__wrapper :nth-child(3) img
+    width: 333px
+    height: 500px
+    margin-bottom: 25%
+
+    @media screen and ( max-width: 480px )
+        width: 200px
+        height: 300px
+
+.image-slider__wrapper :nth-child(4) img
+    width: 333px
+    height: 333px
+    margin-top: 10%
+
+    @media screen and ( max-width: 480px )
+        width: 250px
+        height: 250px
+
+.image-slider__wrapper :nth-child(5) img
+    width: 333px
+    height: 500px
+    margin-top: 15%
+
+    @media screen and ( max-width: 480px )
+        width: 200px
+        height: 300px
+
+.image-slider__wrapper :nth-child(6) img
+    width: 333px
+    height: 500px
+    margin-bottom: 5%
+
+    @media screen and ( max-width: 480px )
+        width: 200px
+        height: 300px
+
+
+.image-slider__wrapper :nth-child(7) img
+    width: 333px
+    height: 333px
+    margin-bottom: 5%
+
+    @media screen and ( max-width: 480px )
+        width: 300px
+        height: 300px
+
+
+
+.image-slider__item
+    display: flex
+    align-items: center
+    width: 100%
+    height: 100%
+
+    img
+        object-fit: cover
+        box-shadow: $img-shadow
+
+.image-slider__wrapper::-webkit-scrollbar
+    display: none
+
+
+.brands__wrapper
+    grid-column: col-start 1 / span 12
+    display: flex
+    width: 100%
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 64px
+    justify-content: center
+    margin-top: $mar-32
+    margin-bottom: $mar-64
+    padding-left: $pad-16
+    padding-right: $pad-16
+    
+
+.brands__item
+    display: flex
+    flex-direction: column
+    width: 25%
+    gap: 16px
+
+    @media screen and ( max-width: 480px )
+       width: 90%
+
+.brands__item-img
+    width: 100%
+    aspect-ratio: 2 / 3
+    object-fit: cover
+    box-shadow: $img-shadow
+
+.brands__list
+    grid-column: col-start 1 / span 12
+    width: 100%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    padding-bottom: $mar-32
+    margin-top: $mar-32
+    margin-bottom: $mar-64
+    padding-left: $pad-32
+    padding-right: $pad-32
+
+
+    h2:after 
+        text-decoration: none
+        content: ''
+        background-image: url('../assets/icons/plus.svg')
+        display: inline-flex
+        background-size: 18px 18px
+        width: 18px
+        height: 18px
+        margin: 0px 8px 0px 4px
+        transition: all ease 300ms
+
+        @media screen and ( max-width: 480px )
+            background-size: 15px 15px
+            width: 15px
+            height: 15px
+            margin: 0px 8px 0px 4px
+
+.footer
+    position: relative
+    background: $primary-color
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    width: 100vw
+    padding-top: $pad-64
+    padding-bottom: $pad-32
+
+    @media screen and ( max-width: 480px )
+        flex-direction: column
+        gap: 20px
+
+.footer__item
+    padding: 0px 16px 0px 16px
+
+.footer__logo
+    width: 300px
+
+.footer__text
+    color: white
+
+.footer__text
+    p:first-of-type
+        +txt-pre-16
+        +bold
+
+    p
+        margin-bottom: 4px

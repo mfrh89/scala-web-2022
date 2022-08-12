@@ -1,0 +1,279 @@
+@import '_var.sass'
+
+*::selection
+    background: $primary-color
+    color: #ffffff
+
+@mixin txt-pre-8
+    font-size: 8px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-12
+    font-size: 12px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-16
+    font-size: 16px
+    line-height: 200%
+    font-weight: $def
+
+=txt-pre-20
+    font-size: 20px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-22
+    font-size: 22px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-24
+    font-size: 24px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-28
+    font-size: 28px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-36
+    font-size: 36px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-42
+    font-size: 42px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-50
+    font-size: 50px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-58
+    font-size: 58px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-66
+    font-size: 66px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-74
+    font-size: 74px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-82
+    font-size: 82px
+    line-height: 150%
+    font-weight: $def
+
+=txt-pre-120
+    font-size: 120px
+    line-height: 150%
+    font-weight: $def
+
+strong
+    font-weight: 600
+    position: relative
+
+em 
+    font-style: italic
+
+
+=light
+    font-weight: $light
+
+=bold
+    font-weight: $bold
+
+=uppercase
+    text-transform: uppercase
+
+=wide
+    letter-spacing: 1px
+
+=wider
+    letter-spacing: 4px
+
+.txt__default
+    margin-bottom: 8px
+    +txt-pre-16
+
+.link__default
+    text-decoration: none
+    display: inline-block
+    +txt-pre-16
+
+    
+
+.link__default:after
+    content: ''
+    display: inline-flex
+    background-size: 10px 10px
+    width: 10px
+    height: 10px
+    margin-left: 4px
+
+.link__default-light
+    color: $primary-color
+
+.link__default-light:after
+    background-image: url('../assets/icons/arrow_right-up-pos.svg')
+
+.link__default-dark
+    color: white
+    background-color: $primary-color
+
+.link__default-dark:after
+    background-image: url('../assets/icons/arrow_right-up-neg.svg')
+
+.link__nav
+    display: inline-block
+    text-decoration: none
+    padding: 10px
+    margin: $mar-4
+    +uppercase
+    +bold
+    +wide
+
+.link__nav-dark
+    background-color: $primary-color
+    color: white
+
+.link__nav:after
+    text-decoration: none
+    content: ''
+    display: inline-flex
+    background-image: url('../assets/icons/arrow_right-up-neg.svg')
+    background-size: 10px 10px
+    width: 10px
+    height: 10px
+    margin-left: 6px
+    transition: all ease 300ms
+
+.link__nav:hover:after
+    transform: rotate(45deg)
+
+.link__marquee
+    text-decoration: none
+
+.link__marquee:after
+    text-decoration: none
+    content: ''
+    display: inline-flex
+    background-size: 14px 14px
+    width: 14px
+    height: 14px
+    margin-left: 4px
+    transition: all ease 300ms
+
+.link__marquee-light:after
+    background-image: url('../assets/icons/arrow_right-up-pos.svg')
+
+.link__marquee-dark:after
+    background-image: url('../assets/icons/arrow_right-up-neg.svg')
+
+.link__marquee:hover::after
+    transform: rotate(45deg)
+
+.txt__title
+    +txt-pre-24
+    +bold
+
+.txt__subtitle
+    +txt-pre-20
+    +bold
+
+.txt__subtitle-s
+    +txt-pre-16
+    +bold
+
+.txt__title + .txt__subtitle
+    margin-top: 8px
+
+.txt__subtitle + .txt__default
+    margin-bottom: 16px
+
+.txt__default + .txt__subtitle 
+    margin-top: 48px
+
+
+.txt__subtitle + .txt__subtitle
+    margin-top: 4px
+    margin-bottom: 8px
+ 
+
+.list__default
+    margin: 16px 0px 16px 32px
+    list-style-type: disc
+    
+    li 
+        margin-bottom: 10px
+
+
+.btn__default 
+    display: inline-block
+    text-decoration: none
+    padding: 14px
+    margin: 8px 0px 8px 0px
+    border: 2px solid $primary-color
+    transition: all ease 300ms
+    box-shadow: $img-shadow
+    +uppercase
+    +bold
+    +wider
+
+
+
+.btn__default::after
+    text-decoration: none
+    content: ''
+    display: inline-flex
+    background-size: 13px 13px
+    width: 13px
+    height: 13px
+    margin-left: 6px
+    transition: all ease 300ms
+
+.btn__default-dark
+    background-color: $primary-color
+    color: white
+
+.btn__default-dark:hover
+    background-color: white
+    color: $primary-color
+    border: 2px solid $primary-color
+
+.btn__default-dark::after
+    background-image: url('../assets/icons/arrow-right-up.svg')
+
+.icon__calender-light::after
+    background-image: url('../assets/icons/calendar-neg.svg')
+
+.icon__calender-light:hover::after
+    background-image: url('../assets/icons/calendar-pos.svg')
+
+
+.txt__brands
+    text-align: center
+    +txt-pre-20
+    +bold
+    +uppercase
+    +wide
+
+.txt__brands-list
+    +txt-pre-28
+    +bold
+    +uppercase
+    +wide
+
+    @media screen and ( max-width: 480px )
+        +txt-pre-20
+        +bold
