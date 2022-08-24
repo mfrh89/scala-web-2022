@@ -1,0 +1,34 @@
+name: Deploy to Production
+
+on:
+    push:
+        branches:
+            - staging
+
+jobs:
+    deploy:
+        name: Deployment to Production
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Node 12.16.3
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.16.3
+
+            - name: NPM Install and NPM Build
+              run: |
+                  npm i
+                  npm run build
+
+            - name: Copy files to Production Server
+              uses: appleboy/scp-action@master
+              with:
+                  HOST: ${{ secrets.SERVER_IP }}
+                  PORT: ${{ secrets.SERVER_PORT }}
+                  USERNAME: ${{ secrets.SERVER_USERNAME }}
+                  PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+                  SOURCE: "dist/*"
+                  TARGET: "mfrh.xyz/public_html/staging-scala"
+                  STRIP_COMPONENTS: 1
