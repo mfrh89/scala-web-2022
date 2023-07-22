@@ -348,6 +348,7 @@ body
     width: 100vw
     display: grid
     grid-template-columns: repeat(12, 1fr)
+    align-items: center
     gap: 4rem
     margin-top: $mar-64
     margin-bottom: $mar-64
@@ -357,6 +358,9 @@ body
 .brands_grid__item
     img
         width: 100%
+
+    h3
+        margin-top: $mar-16
 
 .brands_grid__item:nth-child(1)
     grid-column: 3/7
@@ -377,3 +381,9 @@ body
 .brands_grid__item:nth-child(6)
     grid-column: 7 / 11
     grid-row: 3 / 4
+
+.brands_grid__item:nth-child(7)
+    grid-column: 4 / 8
+
+.brands_grid__item:nth-child(8)
+    grid-column: 8 / 11
