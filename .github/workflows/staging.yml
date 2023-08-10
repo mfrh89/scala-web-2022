@@ -1,6 +1,5 @@
 name: Deploy to Staging
 
-
 on:
     push:
         branches:
@@ -8,7 +7,7 @@ on:
 
 jobs:
     deploy:
-        name: Deployment to Production
+        name: Deployment to Staging
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -29,7 +28,7 @@ jobs:
                   HOST: ${{ secrets.SERVER_IP }}
                   PORT: ${{ secrets.SERVER_PORT }}
                   USERNAME: ${{ secrets.SERVER_USERNAME }}
-                  PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+                  KEY: ${{ secrets.SSH_PRIVATE_KEY }}
                   SOURCE: "dist/*"
                   TARGET: "mfrh.xyz/public_html/staging-scala"
                   STRIP_COMPONENTS: 1

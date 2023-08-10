@@ -28,7 +28,7 @@ jobs:
                   HOST: ${{ secrets.SERVER_IP }}
                   PORT: ${{ secrets.SERVER_PORT }}
                   USERNAME: ${{ secrets.SERVER_USERNAME }}
-                  PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+                  KEY: ${{ secrets.SSH_PRIVATE_KEY }}
                   SOURCE: "dist/*"
                   TARGET: "scala-prien.de/html"
                   STRIP_COMPONENTS: 1
