@@ -25,7 +25,8 @@ jobs:
             - uses: actions/upload-artifact@v3
               with:
                   name: dist
-                  path: /dist
+                  path: |
+                      dist
 
             - name: Copy files to Production Server
               uses: appleboy/scp-action@master
