@@ -111,7 +111,7 @@ const webp = () => {
 
 // Copy assets
 const assets = () => {
-    return gulp.src(`${src}/assets/**`).pipe(gulp.dest(`${dest}/assets`));
+    return gulp.src(`${src}/assets/**/*.*`).pipe(gulp.dest(`${dest}/assets`));
 };
 
 //Watch changes & refresh page
